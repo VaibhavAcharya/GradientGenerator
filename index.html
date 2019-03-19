@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.css" />
+  <link rel="stylesheet" href="./Assets/Style.css" />
+  <title>Linear Gradient Generator</title>
+</head>
+<body>
+  <div id="preview-frame" style="background-color: #667EEA;
+  background: -webkit-linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+  background: -moz-linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+  background: -ms-linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+  background: -o-linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+  background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#667EEA, endColorstr=#764BA2);
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr#667EEA, endColorstr=#764BA2);">
+    <div id="site-head">Linear Gradient Generator</div>
+    <div id="get-code-btn" data-clipboard-text="background-color: #667EEA;
+    background: -webkit-linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+    background: -moz-linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+    background: -ms-linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+    background: -o-linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+    background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#667EEA, endColorstr=#764BA2);
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr#667EEA, endColorstr=#764BA2);">Copy to clipboard!</div>
+  </div>
+  <div id="control-frame">
+    <div class="small-heads">Select colors</div>
+    <div id="color-frame">
+      <div id="color-picker1"></div>
+      <div class="small-heads">&#8594;</div>
+      <div id="color-picker2"></div>
+    </div>
+    <div class="small-heads">Direction</div>
+    <div id="direction-frame">
+      <input type="range" min="0" max="360" value="135" id="direction" />
+      <div id="direction-output"></div>
+    </div>
+    <footer>
+      Created with &hearts; by <a href="https://vaibhavacharya.github.io" target="_blank">Vaibhav Acharya</a>.
+    </footer>
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script src="./Assets/Script.js"></script>
+</body>
+</html>
