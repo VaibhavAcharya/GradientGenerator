@@ -1,11 +1,11 @@
-let previewFrame = document.getElementById("preview-frame");
-let slider = document.getElementById("direction");
-let output = document.getElementById("direction-output");
-let codeBox = document.getElementById("linear-gradient-code");
-let getCodeBtn = document.getElementById("get-code-btn");
-let getCodeBtnClipboard = new ClipboardJS('#get-code-btn');
+var previewFrame = document.getElementById("preview-frame");
+var slider = document.getElementById("direction");
+var output = document.getElementById("direction-output");
+var codeBox = document.getElementById("linear-gradient-code");
+var getCodeBtn = document.getElementById("get-code-btn");
+var getCodeBtnClipboard = new ClipboardJS('#get-code-btn');
 
-let changeGradient = () => {
+function changeGradient(){
   color1 = pickr1.getColor().toHEXA().toString();
   color2 = pickr2.getColor().toHEXA().toString();
   direction = slider.value + "deg";
@@ -65,7 +65,7 @@ const pickr2 = new Pickr({
 });
 
 output.innerHTML = slider.value+"deg";
-slider.oninput = () => {
+slider.oninput = function() {
   output.innerHTML = this.value+"deg";
   changeGradient();
 }
@@ -81,7 +81,7 @@ pickr2.on('change', () => {
   changeGradient();
 });
 
-getCodeBtnClipboard.on('success', (e) => {
+getCodeBtnClipboard.on('success', function(e) {
     console.info('Action:', e.action);
     console.info('Text:', e.text);
     console.info('Trigger:', e.trigger);
@@ -89,7 +89,7 @@ getCodeBtnClipboard.on('success', (e) => {
     e.clearSelection();
 });
 
-getCodeBtnClipboard.on('error', (e) => {
+getCodeBtnClipboard.on('error', function(e) {
     console.error('Action:', e.action);
     console.error('Trigger:', e.trigger);
 });
