@@ -64,9 +64,9 @@ const pickr2 = new Pickr({
  }
 });
 
-output.innerHTML = slider.value+"deg";
+output.innerHTML = slider.value+" deg";
 slider.oninput = function() {
-  output.innerHTML = this.value+"deg";
+  output.innerHTML = this.value+" deg";
   changeGradient();
 }
 
