@@ -1,13 +1,13 @@
-var previewFrame = document.getElementById("preview-frame");
-var slider = document.getElementById("direction");
-var output = document.getElementById("direction-output");
-var codeBox = document.getElementById("linear-gradient-code");
-var getCodeBtn = document.getElementById("get-code-btn");
-var getCodeBtnClipboard = new ClipboardJS('#get-code-btn');
+let previewFrame = document.getElementById("preview-frame");
+let slider = document.getElementById("direction");
+let output = document.getElementById("direction-output");
+let codeBox = document.getElementById("linear-gradient-code");
+let getCodeBtn = document.getElementById("get-code-btn");
+let getCodeBtnClipboard = new ClipboardJS('#get-code-btn');
 
-function changeGradient(){
-  color1 = pickr1.getColor().toHEX().toString();
-  color2 = pickr2.getColor().toHEX().toString();
+let changeGradient = () => {
+  color1 = pickr1.getColor().toHEXA().toString();
+  color2 = pickr2.getColor().toHEXA().toString();
   direction = slider.value + "deg";
 
   code = "background-color: "+color1+";\n"+"background: -webkit-linear-gradient("+direction+", "+color1+" 0%, "+color2+" 100%);\n"+"background: -moz-linear-gradient("+direction+", "+color1+" 0%, "+color2+" 100%);\n"+"background: -ms-linear-gradient("+direction+", "+color1+" 0%, "+color2+" 100%);\n"+"background: -o-linear-gradient("+direction+", "+color1+" 0%, "+color2+" 100%);\n"+"background: linear-gradient("+direction+", "+color1+" 0%, "+color2+" 100%);\n"+"filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr="+color1+", endColorstr="+color2+");\n"+"-ms-filter: progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr"+color1+", endColorstr="+color2+");";
@@ -65,7 +65,7 @@ const pickr2 = new Pickr({
 });
 
 output.innerHTML = slider.value+"deg";
-slider.oninput = function() {
+slider.oninput = () => {
   output.innerHTML = this.value+"deg";
   changeGradient();
 }
@@ -81,7 +81,7 @@ pickr2.on('change', () => {
   changeGradient();
 });
 
-getCodeBtnClipboard.on('success', function(e) {
+getCodeBtnClipboard.on('success', (e) => {
     console.info('Action:', e.action);
     console.info('Text:', e.text);
     console.info('Trigger:', e.trigger);
@@ -89,7 +89,7 @@ getCodeBtnClipboard.on('success', function(e) {
     e.clearSelection();
 });
 
-getCodeBtnClipboard.on('error', function(e) {
+getCodeBtnClipboard.on('error', (e) => {
     console.error('Action:', e.action);
     console.error('Trigger:', e.trigger);
 });
