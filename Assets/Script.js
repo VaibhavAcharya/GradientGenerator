@@ -37,6 +37,7 @@ const pickr1 = new Pickr({
       save: true
     }
   },
+  theme: 'nano',
   strings: {
     save: 'OK'
  }
@@ -59,6 +60,7 @@ const pickr2 = new Pickr({
       save: true
     }
   },
+  theme: 'nano',
   strings: {
     save: 'OK'
  }
